@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using CarouselView.FormsPlugin.iOS;
 using Foundation;
 using UIKit;
 
@@ -22,6 +22,7 @@ namespace FashionEccomerce.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            CarouselViewRenderer.Init();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
