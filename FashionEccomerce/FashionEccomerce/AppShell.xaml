@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:FashionEccomerce.Views"
+    x:Class="FashionEccomerce.AppShell"
+    Shell.NavBarIsVisible="False"
+    >
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ThemeColor">#530100</Color>
+            <Color x:Key="GrayColor">Gray</Color>
+            <Color x:Key="BgColor">#F0F0F0</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+
+                <Setter Property="Shell.Background" Value="{StaticResource BgColor}"/>
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource GrayColor}"/>
+                <Setter Property="Shell.TitleColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource BgColor}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource GrayColor}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource ThemeColor}"/>
+
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}"/>
+
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+
+        <Tab Title="Shop" Icon="shop.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ShopPage}"/>
+        </Tab>
+
+        <Tab Title="Explore" Icon="explore.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ExplorePage}"/>
+        </Tab>
+
+        <Tab Title="Collections" Icon="collections.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CollectionPage}"/>
+        </Tab>
+
+        <Tab Title="Profile" Icon="user.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}"/>
+        </Tab>
+
+
+    </TabBar>
+   
+</Shell>

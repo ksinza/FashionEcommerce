@@ -17,5 +17,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="CarouselView.FormsPlugin" />
+    <None Remove="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>

@@ -3,6 +3,62 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FashionEccomerce.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PlayfairBold">
+                <On Platform="Android" Value="PlayfairDisplay-Bold.ttf#Playfair Display Bold" />
+                <On Platform="iOS" Value="PlayfairDisplay-Bold" />
+            </OnPlatform>
+             <OnPlatform x:TypeArguments="x:String" x:Key="PlayfairNormal">
+                <On Platform="Android" Value="PlayfairDisplay-Regular.ttf#Playfair Display Regular" />
+                <On Platform="iOS" Value="PlayfairDisplay-Regular" />
+            </OnPlatform>
 
+            <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
+                <On Platform="Android" Value="Roboto-Bold.ttf#Roboto Bold" />
+                <On Platform="iOS" Value="Roboto-Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="NormalFont">
+                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto" />
+                <On Platform="iOS" Value="Roboto-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="ThinFont">
+                <On Platform="Android" Value="Roboto-Thin.ttf#Roboto Thin" />
+                <On Platform="iOS" Value="Roboto-Thin" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="LightFont">
+                <On Platform="Android" Value="Roboto-Light.ttf#Roboto Light" />
+                <On Platform="iOS" Value="Roboto-Light" />
+            </OnPlatform>
+             <Style TargetType="Label" >
+                <Setter Property="FontFamily" Value="{StaticResource NormalFont}"/>
+            </Style>
+
+            <ControlTemplate x:Key="GeneralTemplate">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="30,20,30,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{TemplateBinding Parent.Title}" TextColor="Black"
+                               FontFamily="{StaticResource PlayfairBold}" FontSize="22"
+                               VerticalOptions="Center"/>
+                        <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End"
+                                     VerticalOptions="Center">
+                            <ImageButton Source="fav.png" Aspect="AspectFit" HeightRequest="32"
+                                         WidthRequest="30" VerticalOptions="Center"/>
+                            <ImageButton Source="cartFilled.png" Aspect="AspectFit" HeightRequest="32"
+                                         WidthRequest="30" VerticalOptions="Center"/>
+
+                        </StackLayout>
+                    </Grid>
+                    <ContentPresenter Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
